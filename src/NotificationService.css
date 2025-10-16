@@ -1,0 +1,72 @@
+.notification-container {
+  width: 350px;
+  margin: 50px auto;
+
+  padding: 30px 20px;
+  background-color: #f0f4f8;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+.title {
+  margin-bottom: 20px;
+  font-size: 22px;
+  color: #0d3b66;
+}
+
+.notification-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.notification-form label {
+  text-align: left;
+  font-weight: bold;
+  color: #333;
+}
+
+.notification-form input {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+.notification-form input:focus {
+  outline: none;
+  border-color: #0d3b66;
+    box-shadow: 0 0 5px rgba(13,59,102,0.5);
+}
+
+.login-btn {
+  background-color: #0d3b66;
+  color: #fff;
+  padding: 10px 0;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s, opacity 0.3s;
+}
+
+/* Enabled button with hover */
+.login-btn.enabled {
+  background-color: #1d4ed8;
+}
+
+.login-btn.enabled:hover {
+  background-color: #2563eb;
+}
+
+/* Disabled button (not clickable) */
+.login-btn.disabled {
+  background-color: #9ca3af;
+  cursor: not-allowed;
+  opacity: 0.6;
+  pointer-events: none; /* prevents clicks */
+}
+

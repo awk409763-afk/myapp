@@ -1,0 +1,120 @@
+/* 🎯 Global Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+/* 🌈 Background Setup */
+body {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  height: 100vh;
+  display: flex;
+  justify-content:center ;
+  align-items: right;
+}
+
+/* 🧭 Counter Container */
+.counter-container {
+  background: white;
+  width: 300px;
+  text-align: center;
+  margin-top: 5%;
+  padding: 2.5rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.counter-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.35);
+}
+
+/* 🔠 Title */
+.title {
+  font-size: 2rem;
+  color: #4f46e5;
+  margin-bottom: 1.5rem;
+}
+
+/* 🧮 Counter Display */
+.display {
+  font-size: 4rem;
+  font-weight: 600;
+  color: #111;
+  margin-bottom: 2rem;
+  background: #f3f4f6;
+  border-radius: 12px;
+  padding: 1rem;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.display:hover {
+  background: #e0e7ff;
+  transform: scale(1.05);
+}
+
+/* 🎛️ Button Group */
+.buttons {
+  display: flex;
+  justify-content: space-around;
+}
+
+/* 🧩 Buttons */
+.btn {
+  border: none;
+  outline: none;
+  padding: 0.8rem 1.4rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+/* 🟢 Increase Button */
+.increase {
+  background: #22c55e;
+}
+.increase:hover {
+  background: #16a34a;
+  transform: scale(1.1);
+}
+
+/* 🔴 Decrease Button */
+.decrease {
+  background: #ef4444;
+}
+.decrease:hover {
+  background: #dc2626;
+  transform: scale(1.1);
+}
+
+/* 🔵 Reset Button */
+.reset {
+  background: #3b82f6;
+}
+.reset:hover {
+  background: #2563eb;
+  transform: scale(1.1);
+}
+
+/* 📱 Responsive */
+@media (max-width: 480px) {
+  .counter-container {
+    width: 90%;
+    padding: 1.5rem;
+  }
+
+  .display {
+    font-size: 3rem;
+  }
+
+  .btn {
+    font-size: 1rem;
+    padding: 0.6rem 1.2rem;
+  }
+}
