@@ -16,6 +16,8 @@ import About from "./About";
 
 
 function App() {
+
+  //hhhdfndgn
   return(
      
      <><video className="background-video" autoPlay loop muted>
@@ -24,6 +26,7 @@ function App() {
     </video><Router>
       <Header />
       <Routes>
+        
 
       
   
@@ -32,11 +35,10 @@ function App() {
 
         {/* Flight search route */}
         <Route path="/flights" element={<FligtSearch />} />
-        <Route path="/Notification" element={<Notification />} />
         <Route path="/offers" element={<Offers />} />
         <Route path="/about" element={<About />} />
-
-
+        <Route path="/notification" element={<Notification/>} />
+        <Route path="/userlogin" element={<Notification title="User Portal Login" />} />
       </Routes>
       </Router></>
    

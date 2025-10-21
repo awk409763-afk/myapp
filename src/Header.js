@@ -22,12 +22,13 @@ const Header = () => {
                 <Link to="/notification" style={{ color: "white" }}>Notification</Link>  
                 <Link to="/offers" style={{ color: "white" }}>Offers</Link>
                 <Link to="/about" style={{ color: "white" }}>About Us</Link>
+
           
         </nav>
 
         {/* Buttons */}
         <div className="auth-buttons">
-          <button className="login-btn">Login</button>
+         <Link to="/userlogin" style={{ color: "white" }}>Login</Link>  
           <button className="signup-btn">Sign Up</button>
         </div>
 
