@@ -5,7 +5,7 @@ import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import dayjs from "dayjs";
 import { flightsMock } from "./flightsMock";
 import "./FlightSearch.css";
-import axios from "axios";
+//import axios from "axios";
 
 
 const airports = [
@@ -17,8 +17,8 @@ const airports = [
 ];
 
 const FlightSearch = () => {
-  const [origin, setOrigin] = useState(null);
-  const [destination, setDestination] = useState(null);
+  const [origin, setOrigin] = useState("");
+  const [destination, setDestination] = useState("");
  const [date, setDate] = useState(dayjs("2025-10-15"));
 
   const [flights, setFlights] = useState([]);
@@ -32,6 +32,13 @@ const FlightSearch = () => {
         f.to === destination.code &&
         f.departure.startsWith(date.format("YYYY-MM-DD"))
     );
+
+    alert(
+      `Origin: ${origin?.code} | Destination: ${ destination?.code}`
+
+  
+    );
+   
     setFlights(results);
   };
 
