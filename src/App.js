@@ -10,7 +10,7 @@ import SignUp from "./SignUp";
 import backgroundVideo from "./assets/background.mp4"; // ✅ adjust path if needed
 import "./App.css";
 import Home from "./Home";
-
+//
 function App() {
   return (
     <div className="App">
