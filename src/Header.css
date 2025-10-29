@@ -1,238 +1,77 @@
-/* ================= Header.css ================= */
-
-/* Reset default margin */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-/* Body padding to avoid overlap with fixed header */
-body {
-  font-family: "Poppins", sans-serif;
-  padding-top: 80px; /* match header height */
-}
-
-/* Header Container */
+/* src/Header.css */
 .header {
-  background-color: #0d3b66; /* Dark Blue */
-  color: white;
-  width: 100%;          /* Full width */
-  position: fixed;      /* Fixed at top */
-  top: 0;
-  left: 0;
-  z-index: 1000;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
-  transition: background 0.3s;
-}
-
-/* Optional hover darken */
-.header:hover {
-  background-color: #0b3055;
-}
-
-/* Header Container Flex */
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 15px 5%;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background: linear-gradient(90deg, #002f87, #004aad);
+  color: white;
+  padding: 15px 60px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
 }
 
-/* Logo */
 .logo {
-  font-size: 26px;
+  font-size: 1.5rem;
   font-weight: bold;
-  cursor: pointer;
-  transition: transform 0.3s;
-}
-
-.logo:hover {
-  transform: scale(1.05);
-}
-
-/* Navigation */
-.nav {
   display: flex;
-  gap: 25px;
+  align-items: center;
+  gap: 8px;
+  text-shadow: 0 0 10px #00bfff;
 }
 
-.nav a {
+.nav-links a {
   color: white;
   text-decoration: none;
+  margin: 0 15px;
   font-weight: 500;
   position: relative;
   transition: color 0.3s;
 }
 
-.nav a::after {
-  content: '';
+.nav-links a:hover {
+  color: #00bfff;
+}
+
+.nav-links a::after {
+  content: "";
   position: absolute;
-  width: 0%;
+  width: 0;
   height: 2px;
-  bottom: -4px;
+  bottom: -5px;
   left: 0;
-  background-color: #ffcb05;
+  background: #00bfff;
   transition: 0.3s;
 }
 
-.nav a:hover {
-  color: #ffcb05;
-}
-
-.nav a:hover::after {
+.nav-links a:hover::after {
   width: 100%;
 }
 
-/* Auth Buttons */
 .auth-buttons {
   display: flex;
-  gap: 10px;
+  gap: 15px;
+}
+
+.login-btn,
+.signup-btn {
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
 }
 
 .login-btn {
-  background-color: #ffcb05;
-  color: #0d3b66;
-  border: none;
-  padding: 8px 18px;
-  font-weight: bold;
-  cursor: pointer;
-  border-radius: 5px;
-  transition: all 0.3s;
-}
-
-.login-btn:hover {
-  background-color: #e6b800;
-  transform: scale(1.05);
-}
-
-.signup-btn {
-  background-color: transparent;
-  border: 2px solid #ffcb05;
-  color: #ffcb05;
-  padding: 8px 18px;
-  font-weight: bold;
-  cursor: pointer;
-  border-radius: 5px;
-  transition: all 0.3s;
-}
-
-.signup-btn:hover {
-  background-color: #ffcb05;
-  color: #0d3b66;
-  transform: scale(1.05);
-}
-
-/* Mobile Menu (Hamburger) */
-.mobile-menu {
-  display: none;
-  font-size: 28px;
-  cursor: pointer;
-  transition: transform 0.3s;
-}
-
-.mobile-menu:hover {
-  transform: scale(1.2);
-}
-
-/* Mobile Dropdown Menu */
-.mobile-nav {
-  display: none;
-  flex-direction: column;
-  gap: 15px;
-  background-color: #0d3b66;
-  position: absolute;
-  top: 80px;
-  right: 5%;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-  animation: slideDown 0.3s ease;
-}
-
-.mobile-nav.show {
-  display: flex;
-}
-
-/* Animation */
-@keyframes slideDown {
-  from {
-    opacity: 0;
-    transform: translateY(-20px);
-  } 
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* ================= Hero Section (Optional) ================= */
-.header-hero {
-  height: 100vh; /* Full viewport height */
-  display: flex;
-  flex-direction: column;
-  justify-content: center; /* Center content vertically */
-  align-items: center;
-  text-align: center;
-  background: url('https://images.unsplash.com/photo-1501426026826-31c667bdf23d?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
-  position: relative;
+  background: #004aad;
   color: white;
 }
 
-.header-hero h1 {
-  font-size: 3rem;
-  margin-bottom: 20px;
-  animation: fadeIn 1.5s ease-in-out;
+.signup-btn {
+  background: #ff007f;
+  color: white;
+  transition: 0.3s;
 }
 
-.header-hero p {
-  font-size: 1.2rem;
-  margin-bottom: 30px;
-  animation: fadeIn 2s ease-in-out;
-}
-
-/* Hero button */
-.header-hero .cta-btn {
-  background-color: #ffcb05;
-  color: #0d3b66;
-  padding: 12px 28px;
-  font-weight: bold;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  font-size: 1rem;
-  transition: all 0.3s;
-}
-
-.header-hero .cta-btn:hover {
-  background-color: #e6b800;
-  transform: scale(1.05);
-}
-
-/* Hero Fade-in Animation */
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-/* ================= Responsive ================= */
-@media (max-width: 768px) {
-  .nav,
-  .auth-buttons {
-    display: none;
-  }
-
-  .mobile-menu {
-    display: block;
-  }
-
-  .header-hero h1 {
-    font-size: 2rem;
-  }
-
-  .header-hero p {
-    font-size: 1rem;
-  }
+.signup-btn:hover {
+  background: #ff3399;
 }

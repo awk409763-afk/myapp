@@ -1,22 +1,22 @@
 import React, { useState } from "react";
 import "./NotificationService.css";
 
-const NotificationService = () => {
+const NotificationService = ({ title = "Notification Service Login" }) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
-    const isFormValid = username.trim() !== "" && password.trim() !== "";
-
+  const isFormValid = username.trim() !== "" && password.trim() !== "";
 
   const handleLogin = (e) => {
     e.preventDefault();
+    if (!isFormValid) return;
     alert(`Username: ${username}\nPassword: ${password}`);
-    // Here you can add your login API logic
+    // TODO: Add API call here
   };
 
   return (
     <div className="notification-container">
-      <h2 className="title">Notification Service Login</h2>
+      <h2 className="title">{title}</h2>
       <form className="notification-form" onSubmit={handleLogin}>
         <label htmlFor="username">Username</label>
         <input
@@ -39,12 +39,12 @@ const NotificationService = () => {
         />
 
         <button
-  type="submit"
-  className={`login-btn ${isFormValid ? "enabled" : "disabled"}`}
-  onClick={handleLogin}
->
-  Login
-</button>
+          type="submit"
+          className={`login-btn ${isFormValid ? "enabled" : "disabled"}`}
+          disabled={!isFormValid}
+        >
+          Login
+        </button>
       </form>
     </div>
   );

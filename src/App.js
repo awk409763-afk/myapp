@@ -1,46 +1,37 @@
-import React, { useState } from "react";
-import "./App.css";
-import backgroundVideo from './assets/background.mp4';
-
-import Counter from "./Counter"
-import Header from "./Header";
-import Notification from './Notification';
-import FligtSearch from './FlightSearch';
-import AIAssistant from './AIAssistant';
-//import { BrowserRouter, Routes, Route } from "react-router-dom";
-//import ThemeToggle from "./ThemeToggle";
+// src/App.js
+import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Navbar from './Navbar';
+import Header from "./Header";
+import FlightSearch from "./FlightSearch"; // ✅ correct spelling
 import Offers from "./Offers";
 import About from "./About";
-
-
+import Notification from "./Notification";
+import SignUp from "./SignUp";
+import backgroundVideo from "./assets/background.mp4"; // ✅ adjust path if needed
+import "./App.css";
+import Home from "./Home";
+//
 function App() {
-  return(
-     
-     <><video className="background-video" autoPlay loop muted>
-      <source src={backgroundVideo} type="video/mp4" />
-      Your browser does not support the video tag.
-    </video><Router>
-      <Header />
-      <Routes>
+  return (
+    <div className="App">
+      <video className="background-video" autoPlay loop muted>
+        <source src={backgroundVideo} type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
 
-      
-  
-        {/* Default or Home route */}
-        <Route path="/" element={<h2>Welcome to SkyFly Airlines ✈️</h2>} />
-
-        {/* Flight search route */}
-        <Route path="/flights" element={<FligtSearch />} />
-        <Route path="/Notification" element={<Notification />} />
-        <Route path="/offers" element={<Offers />} />
-        <Route path="/about" element={<About />} />
-
-
-      </Routes>
-      </Router></>
-   
-  )
+      <Router>
+        <Header />
+        <Routes>
+          <Route path="/flights" element={<FlightSearch />} />
+          <Route path="/offers" element={<Offers />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/notification" element={<Notification />} />
+          <Route path="/signup" element={<SignUp />} />
+          <Route path="/Home" element={<Home />} />
+        </Routes>
+      </Router>
+    </div>
+  );
 }
 
-export default App;
+export default App; // ✅ REQUIRED
